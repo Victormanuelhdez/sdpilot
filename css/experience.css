@@ -641,3 +641,60 @@ body.dark .question-card .answer-option.is-selected {
   border-color: #15958d !important;
   background: #0b625f !important;
 }
+
+/* Reviewed answers must override the neutral selected state */
+.question-card .answer-option.is-correct,
+body.dark .question-card .answer-option.is-correct {
+  color: #073d25 !important;
+  border-color: #65c997 !important;
+  background: #d9f6e7 !important;
+}
+
+.question-card .answer-option.is-wrong,
+body.dark .question-card .answer-option.is-wrong {
+  color: #641c1c !important;
+  border-color: #e28b8b !important;
+  background: #f8dddd !important;
+}
+
+/* Question index states */
+.question-nav-btn {
+  color: #173440 !important;
+  border-color: #b8cbd1 !important;
+  background: #ffffff !important;
+}
+.question-nav-btn.is-current {
+  color: #ffffff !important;
+  border-color: #0b625f !important;
+  background: #0b625f !important;
+}
+.question-nav-btn.is-correct {
+  color: #ffffff !important;
+  border-color: #168457 !important;
+  background: #168457 !important;
+}
+.question-nav-btn.is-wrong {
+  color: #ffffff !important;
+  border-color: #c53f3f !important;
+  background: #c53f3f !important;
+}
+body.dark .question-nav-btn {
+  color: #eaf5f4 !important;
+  border-color: #42616b !important;
+  background: #152c35 !important;
+}
+body.dark .question-nav-btn.is-current {
+  color: #062e2d !important;
+  border-color: #7ee5ce !important;
+  background: #7ee5ce !important;
+}
+body.dark .question-nav-btn.is-correct {
+  color: #ffffff !important;
+  border-color: #1f9e69 !important;
+  background: #1f9e69 !important;
+}
+body.dark .question-nav-btn.is-wrong {
+  color: #ffffff !important;
+  border-color: #d45050 !important;
+  background: #d45050 !important;
+}
