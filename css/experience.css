@@ -598,3 +598,46 @@ body.dark .editorial-config .choice-block.is-selected {
   border-color: #0b625f !important;
   background: #0b625f !important;
 }
+
+/* Quiz question: explicit contrast in both themes */
+.question-card::before { display: none !important; }
+
+.question-card h1 {
+  color: #102c39 !important;
+  text-shadow: none !important;
+}
+
+.question-card .muted-strong { color: #526b78 !important; }
+.question-card .tag-badge {
+  color: #075d59 !important;
+  border-color: #82c9c0 !important;
+  background: #e1f4f1 !important;
+}
+
+.question-card .answer-option {
+  color: #173440 !important;
+  border-bottom-color: #cbd9de !important;
+}
+
+.question-card .answer-option.is-selected {
+  color: #ffffff !important;
+  border-color: #0b625f !important;
+  background: #0b625f !important;
+}
+
+body.dark .question-card h1 { color: #f4fbfa !important; }
+body.dark .question-card .muted-strong { color: #b9d0d4 !important; }
+body.dark .question-card .tag-badge {
+  color: #b9f3e4 !important;
+  border-color: #297b76 !important;
+  background: #123f45 !important;
+}
+body.dark .question-card .answer-option {
+  color: #eaf5f4 !important;
+  border-bottom-color: #31505a !important;
+}
+body.dark .question-card .answer-option.is-selected {
+  color: #ffffff !important;
+  border-color: #15958d !important;
+  background: #0b625f !important;
+}
