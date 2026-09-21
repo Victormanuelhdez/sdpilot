@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Plataforma interactiva para estudiar desarrollo seguro, practicar con un banco de preguntas y medir el progreso." name="description"/>
+<title>SecurePath · Desarrollo Seguro</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%2307121b'/%3E%3Cpath d='M32 10l18 8v13c0 12-7 20-18 24C21 51 14 43 14 31V18l18-8z' fill='%2328d7a1'/%3E%3Cpath d='M24 32l6 6 11-14' fill='none' stroke='%2307121b' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"/>
+<link href="css/styles.css" rel="stylesheet"/>
+<link href="css/experience.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="noise"></div>
+<div class="bg-orb orb-a"></div>
+<div class="bg-orb orb-b"></div>
+<div class="bg-orb orb-c"></div>
+<header class="site-header">
+<button aria-label="Ir al inicio" class="brand" data-route="home" type="button">
+<span class="brand-mark">S</span>
+<span class="brand-copy">
+<strong>SecurePath</strong>
+<small>Desarrollo Seguro</small>
+</span>
+</button>
+<nav class="site-nav">
+<button class="nav-link is-active" data-route="home">Inicio</button>
+<button class="nav-link" data-route="study">Estudio</button>
+<button class="nav-link" data-route="materials">Biblioteca</button>
+<button class="nav-link" data-route="flashcards">Tarjetas</button>
+<button class="nav-link" data-route="configure">Exámenes</button>
+<button class="nav-link" data-route="progress">Progreso</button>
+</nav>
+<div class="header-tools">
+<button class="ghost-btn small-btn" id="themeToggle" type="button">Tema</button>
+<button class="ghost-btn mobile-menu" id="menuToggle" type="button">Menú</button>
+</div>
+</header>
+<aside class="mobile-panel" id="mobilePanel">
+<button data-route="home">Inicio</button>
+<button data-route="study">Estudio</button>
+<button data-route="materials">Biblioteca</button>
+<button data-route="flashcards">Tarjetas</button>
+<button data-route="configure">Exámenes</button>
+<button data-route="mistakes">Errores</button>
+<button data-route="progress">Progreso</button>
+</aside>
+<main class="main-shell">
+<section class="screen is-visible" id="screen-home">
+<section class="home-hero">
+<div class="home-copy">
+<span class="home-badge">ACADEMIA · DESARROLLO SEGURO · 7 MÓDULOS</span>
+<div class="headline-wrap">
+<svg aria-hidden="true" class="color-ribbon" preserveaspectratio="none" viewbox="0 0 920 360">
+<defs>
+<lineargradient id="asoRibbon" x1="0" x2="1" y1="0" y2="1">
+<stop offset="0%" stop-color="#ff2d55"></stop>
+<stop offset="18%" stop-color="#ff8a00"></stop>
+<stop offset="36%" stop-color="#ffd600"></stop>
+<stop offset="54%" stop-color="#33d17a"></stop>
+<stop offset="72%" stop-color="#3478f6"></stop>
+<stop offset="100%" stop-color="#8e44ff"></stop>
+</lineargradient>
+</defs>
+<path d="M8 244 C 92 137, 154 311, 238 186 S 381 274 478 139 S 631 258 732 126 S 846 188 912 56" fill="none" stroke="url(#asoRibbon)" stroke-linecap="round" stroke-linejoin="round" stroke-width="64"></path>
+<path d="M8 244 C 92 137, 154 311, 238 186 S 381 274 478 139 S 631 258 732 126 S 846 188 912 56" fill="none" stroke="rgba(255,255,255,.38)" stroke-linecap="round" stroke-width="9"></path>
+</svg>
+<h1><span>Construye seguro.</span><span>Comprende el</span><span class="accent-word">riesgo.</span></h1>
+</div>
+<p class="home-intro">Una ruta completa para comprender SDLC seguro, programación defensiva, seguridad web, móvil, APIs, DevSecOps e inteligencia artificial. Estudia por conceptos, practica y convierte cada error en una nueva oportunidad de aprendizaje.</p>
+<div class="home-actions">
+<button class="home-btn home-btn-primary" data-route="study">Explorar temario</button>
+<button class="home-btn home-btn-secondary" data-route="configure">Iniciar quiz</button>
+</div>
+<div aria-label="Temas disponibles" class="home-topic-row"><button data-topic-shortcut="sdlc-seguro">SDLC</button><button data-topic-shortcut="programacion-segura">CÓDIGO</button><button data-topic-shortcut="seguridad-web">WEB</button><button data-topic-shortcut="seguridad-movil">MÓVIL</button><button data-topic-shortcut="seguridad-apis">APIS</button><button data-topic-shortcut="devsecops">DEVSECOPS</button><button data-topic-shortcut="seguridad-ia">IA</button></div>
+</div>
+<aside aria-label="Examen real indicado: 48 preguntas" class="hero-type-art">
+<span class="type-score">7</span>
+<span class="type-aso">SECURE</span>
+<span class="type-percent">PATH</span>
+<span class="type-equivalent">+</span>
+<span class="type-rest">OWASP</span>
+<span class="type-java">IA</span>
+<span class="type-formula">✓ 112 preguntas · 4 simuladores</span>
+</aside>
+</section>
+<section aria-label="Resumen de progreso" class="home-metrics">
+<article><small>Intentos</small><strong id="statAttempts">0</strong></article>
+<article><small>Promedio</small><strong id="statAverage">0%</strong></article>
+<article><small>Mejor resultado</small><strong id="statBest">0%</strong></article>
+<article><small>Errores por reforzar</small><strong id="statMistakes">0</strong></article>
+<article class="metric-message"><small>Formato real indicado</small><strong>48 preguntas</strong><span>simuladores completos</span></article>
+</section>
+<section class="home-path">
+<div class="path-intro">
+<span class="home-badge">RUTA DE ESTUDIO</span>
+<h2>Estudiar menos tiempo, pero con mejor orden.</h2>
+<p>La página te lleva de comprensión a simulación. Cada bloque abre directamente la herramienta correspondiente.</p>
+</div>
+<div class="path-list">
+<button class="path-item" data-route="study">
+<span class="path-number">01</span>
+<span class="path-copy"><strong>Comprender</strong><small>Temario visual, reglas mentales y trampas frecuentes.</small></span>
+<span class="path-arrow">↗</span>
+</button>
+<button class="path-item" data-route="flashcards">
+<span class="path-number">02</span>
+<span class="path-copy"><strong>Recordar</strong><small>Tarjetas amplias con respuesta, regla mental y seguimiento.</small></span>
+<span class="path-arrow">↗</span>
+</button>
+<button class="path-item" data-quick="10">
+<span class="path-number">03</span>
+<span class="path-copy"><strong>Detectar huecos</strong><small>Reto rápido de 10 preguntas con explicación inmediata.</small></span>
+<span class="path-arrow">↗</span>
+</button>
+<button class="path-item" data-quick="48">
+<span class="path-number">04</span>
+<span class="path-copy"><strong>Simular</strong><small>Simulacro completo de 48 preguntas sin inventar una meta oficial.</small></span>
+<span class="path-arrow">↗</span>
+</button>
+</div>
+</section>
+<section class="home-countdown">
+<div>
+<span class="home-badge">FECHA DEL EXAMEN</span>
+<h2>Define tu fecha y mide cuánto tiempo te queda para repasar.</h2>
+</div>
+<div class="countdown-box" id="countdownBox"></div>
+<label class="date-field">
+<span>Cambiar fecha</span>
+<input id="examDateInput" type="date"/>
+</label>
+</section>
+</section>
+<section class="screen" id="screen-study">
+<section class="inner-hero inner-hero-study">
+<div class="inner-hero-copy">
+<span class="home-badge">ESTUDIO · 7 MÓDULOS · 28 CONCEPTOS</span>
+<div class="inner-title-wrap">
+<span aria-hidden="true" class="inner-ribbon"></span>
+<h1>Entiende primero.<br/><strong>Memoriza después.</strong></h1>
+</div>
+<p>Cambia de módulo desde la columna izquierda. Cada concepto incluye explicación, regla mental, trampa típica y datos rápidos para repasar con intención.</p>
+<label class="editorial-control">
+<span>Buscar concepto</span>
+<input id="studySearch" placeholder="Ej. STRIDE, SSRF, MASVS, BOLA, SAST, drift..." type="search"/>
+</label>
+</div>
+<div aria-hidden="true" class="inner-type-art">
+<span class="inner-ghost-main">TEMARIO</span>
+<span class="inner-ghost-number">7</span>
+<span class="inner-ghost-side">CONCEPTOS</span>
+<span class="inner-ghost-small">SDLC · OWASP · DEVSECOPS · IA</span>
+</div>
+</section>
+<div class="study-layout editorial-study">
+<aside class="study-sidebar reveal" id="topicSidebar"></aside>
+<div class="study-stage reveal" id="studyStage"></div>
+</div>
+</section>
+<section class="screen" id="screen-materials">
+<section class="inner-hero inner-hero-materials">
+<div class="inner-hero-copy">
+<span class="home-badge">BIBLIOTECA · PUNTOS DE ALTO VALOR</span>
+<div class="inner-title-wrap"><span aria-hidden="true" class="inner-ribbon"></span><h1>Repasa reglas.<br/><strong>No párrafos enteros.</strong></h1></div>
+<p>Resumen transversal de principios, vulnerabilidades, estándares y herramientas que conectan los siete módulos.</p>
+</div>
+<div aria-hidden="true" class="inner-type-art">
+<span class="inner-ghost-main">7</span><span class="inner-ghost-number">112</span><span class="inner-ghost-side">CLAVES</span><span class="inner-ghost-small">STRIDE · OWASP · MASVS · SAST</span>
+</div>
+</section>
+<div class="materials-layout materials-layout-html">
+<aside aria-label="Índice de guía rápida" class="materials-index">
+<div class="materials-index-head"><span class="home-badge">ÍNDICE</span><h2>Guías de repaso</h2><p>Abre un bloque y úsalo como acordeón de última vuelta.</p></div>
+<button class="material-item is-active" data-material-target="material-testing" type="button"><span class="material-number">01</span><span><strong>Diseño seguro</strong><small>SDLC, amenazas y riesgo</small></span><span class="material-arrow">→</span></button>
+<button class="material-item" data-material-target="material-evidence" type="button"><span class="material-number">02</span><span><strong>Aplicaciones</strong><small>Web, móvil y APIs</small></span><span class="material-arrow">→</span></button>
+<button class="material-item" data-material-target="material-control" type="button"><span class="material-number">03</span><span><strong>Automatización</strong><small>Pipeline, secretos y nube</small></span><span class="material-arrow">→</span></button>
+<button class="material-item" data-material-target="material-cvt" type="button"><span class="material-number">04</span><span><strong>Inteligencia artificial</strong><small>Datos, robustez y confianza</small></span><span class="material-arrow">→</span></button>
+<button class="material-item" data-material-target="material-acronyms" type="button"><span class="material-number">05</span><span><strong>Mapa de herramientas</strong><small>Estándares y técnicas clave</small></span><span class="material-arrow">→</span></button>
+</aside>
+<section class="material-html-stage">
+<article class="material-panel is-active" data-material-panel="" id="material-testing">
+<span class="section-kicker">DISEÑO SEGURO</span><h2>Decide antes de construir</h2>
+<section class="material-block"><h3>Secuencia esencial</h3><div class="material-comparison-grid"><div class="material-note"><h4>1 · Requisitos</h4><p>Define activos, datos, usuarios y necesidades de confidencialidad, integridad y disponibilidad.</p></div><div class="material-note"><h4>2 · Amenazas</h4><p>Usa STRIDE para clasificar y DREAD para priorizar escenarios.</p></div><div class="material-note"><h4>3 · Controles</h4><p>Selecciona mitigaciones proporcionales y criterios verificables.</p></div></div></section>
+<section class="material-block"><h3>Regla transversal</h3><p>Shift Left reduce costo y exposición, pero la seguridad continúa en pruebas, operación, monitoreo y mantenimiento.</p></section>
+</article>
+<article class="material-panel" data-material-panel="" hidden="" id="material-evidence">
+<span class="section-kicker">APLICACIONES</span><h2>Tres superficies, una disciplina</h2>
+<section class="material-block"><div class="material-comparison-grid"><div class="material-note"><h4>Web</h4><p>Control de acceso por solicitud, parametrización, salida contextual y protección de sesión.</p></div><div class="material-note"><h4>Móvil</h4><p>MASVS cubre almacenamiento, criptografía, plataforma, red, código, privacidad y resiliencia.</p></div><div class="material-note"><h4>APIs</h4><p>Autoriza cada objeto y función; valida contratos, limita consumo y conserva inventario.</p></div></div></section>
+<section class="material-block"><h3>Principio común</h3><p>Autenticar identifica al sujeto. Autorizar decide si puede realizar una acción sobre un objeto específico.</p></section>
+</article>
+<article class="material-panel" data-material-panel="" hidden="" id="material-control">
+<span class="section-kicker">DEVSECOPS</span><h2>Seguridad dentro del flujo</h2>
+<section class="material-block"><div class="material-comparison-grid"><div class="material-note"><h4>Código</h4><p>SAST revisa patrones inseguros y SCA identifica dependencias vulnerables.</p></div><div class="material-note"><h4>Ejecución</h4><p>DAST prueba la aplicación funcionando y valida controles visibles desde fuera.</p></div><div class="material-note"><h4>Entrega</h4><p>Gates, firmas, secretos temporales e infraestructura como código aportan control y evidencia.</p></div></div></section>
+<section class="material-block"><h3>Responsabilidad compartida</h3><p>En la nube, el proveedor protege parte de la plataforma; el cliente conserva responsabilidad sobre configuración, identidades, aplicaciones y datos.</p></section>
+</article>
+<article class="material-panel" data-material-panel="" hidden="" id="material-cvt">
+<span class="section-kicker">INTELIGENCIA ARTIFICIAL</span><h2>Confianza durante todo el ciclo</h2>
+<section class="material-block"><div class="material-comparison-grid"><div class="material-note"><h4>Datos</h4><p>Calidad, linaje, minimización, permisos e integridad antes del entrenamiento.</p></div><div class="material-note"><h4>Modelo</h4><p>Robustez frente a manipulación, drift, entradas adversariales y sesgo.</p></div><div class="material-note"><h4>Operación</h4><p>Transparencia, monitoreo, alertas, revisión humana y respuesta a incidentes.</p></div></div></section>
+<section class="material-block"><h3>Idea central</h3><p>Una precisión alta no basta: el modelo debe seguir siendo seguro, justo, explicable y confiable bajo cambios reales.</p></section>
+</article>
+<article class="material-panel" data-material-panel="" hidden="" id="material-acronyms">
+<span class="section-kicker">MAPA DE HERRAMIENTAS</span><h2>Qué resuelve cada enfoque</h2>
+<section class="material-block"><div class="material-comparison-grid"><div class="material-note"><h4>STRIDE / DREAD</h4><p>Clasifica amenazas y ayuda a priorizar su riesgo.</p></div><div class="material-note"><h4>OWASP Top 10</h4><p>Resume riesgos frecuentes en web y APIs.</p></div><div class="material-note"><h4>MASVS</h4><p>Línea base para verificar seguridad móvil.</p></div><div class="material-note"><h4>SAST / SCA / DAST</h4><p>Analizan código, dependencias y comportamiento en ejecución.</p></div><div class="material-note"><h4>Vault / IaC</h4><p>Gestionan secretos y configuración reproducible.</p></div><div class="material-note"><h4>Monitoreo de IA</h4><p>Detecta drift, degradación, abuso e impacto desigual.</p></div></div></section>
+</article>
+</section>
+</div>
+</section>
+<section class="screen" id="screen-flashcards">
+<section class="inner-hero inner-hero-cards">
+<div class="inner-hero-copy">
+<span class="home-badge">RECUERDO ACTIVO · 28 TARJETAS</span>
+<div class="inner-title-wrap">
+<span aria-hidden="true" class="inner-ribbon"></span>
+<h1>No leas dos veces.<br/><strong>Intenta recordarlo.</strong></h1>
+</div>
+<p>Haz clic para voltear la tarjeta. Después marca si la dominaste o si debe volver a tu lista de repaso.</p>
+<label class="editorial-control compact-control">
+<span>Filtrar por tema</span>
+<select id="flashTopicSelect"></select>
+</label>
+</div>
+<div aria-hidden="true" class="inner-type-art">
+<span class="inner-ghost-main">CARDS</span>
+<span class="inner-ghost-number">01/28</span>
+<span class="inner-ghost-side">MEMORIA</span>
+<span class="inner-ghost-small">CONCEPTO · REGLA · TRAMPA</span>
+</div>
+</section>
+<div class="flash-stage reveal editorial-flash">
+<div class="flash-card-shell" id="flashCard">
+<div class="flash-card-inner">
+<article class="flash-face front-face">
+<span class="flash-badge" id="flashTopicLabel"></span>
+<h2 id="flashQuestion"></h2>
+<p class="flash-hint">Haz clic para ver la respuesta</p>
+</article>
+<article class="flash-face back-face">
+<span class="flash-badge alt">Respuesta</span>
+<p id="flashAnswer"></p>
+<small id="flashMemory"></small>
+</article>
+</div>
+</div>
+<div class="flash-toolbar">
+<button class="ghost-btn" id="flashPrev">Anterior</button>
+<div class="flash-meta">
+<strong id="flashCounter">1 / 1</strong>
+<small id="flashStatus">Estado: sin evaluar</small>
+</div>
+<button class="ghost-btn" id="flashNext">Siguiente</button>
+</div>
+<div class="flash-actions">
+<button class="secondary-btn danger-soft" id="flashReview">Necesito repaso</button>
+<button class="primary-btn success-soft" id="flashKnown">La recordé</button>
+</div>
+</div>
+</section>
+<section class="screen" id="screen-configure">
+<section class="inner-hero inner-hero-quiz">
+<div class="inner-hero-copy">
+<span class="home-badge">QUIZ · 5 / 10 / 20 / 48 PREGUNTAS</span>
+<div class="inner-title-wrap">
+<span aria-hidden="true" class="inner-ribbon"></span>
+<h1>Configura el reto.<br/><strong>Mide lo que sabes.</strong></h1>
+</div>
+<p>Usa práctica para recibir explicación inmediata o simulación para revisar todo al final. El banco contiene 112 preguntas y cuatro recorridos completos.</p>
+</div>
+<div aria-hidden="true" class="inner-type-art">
+<span class="inner-ghost-main">QUIZ</span>
+<span class="inner-ghost-number">48Q</span>
+<span class="inner-ghost-side">SIMULADOR</span>
+<span class="inner-ghost-small">PRÁCTICA · EXAMEN · REPASO</span>
+</div>
+</section>
+<form class="config-layout reveal editorial-config" id="quizConfig">
+<article class="config-card" data-step="01">
+<h3>Modalidad</h3>
+<label class="choice-block">
+<input checked="" name="mode" type="radio" value="practice"/>
+<span><strong>Práctica</strong><small>Retroalimentación inmediata después de cada pregunta.</small></span>
+</label>
+<label class="choice-block">
+<input name="mode" type="radio" value="simulation"/>
+<span><strong>Simulación</strong><small>Resultados y explicaciones hasta el final.</small></span>
+</label>
+</article>
+<article class="config-card" data-step="02">
+<h3>Número de preguntas</h3>
+<div class="chip-row"><label class="pill-choice"><input name="count" type="radio" value="5"/><span>5</span></label><label class="pill-choice"><input checked="" name="count" type="radio" value="10"/><span>10</span></label><label class="pill-choice"><input name="count" type="radio" value="20"/><span>20</span></label><label class="pill-choice"><input name="count" type="radio" value="48"/><span>48</span></label></div>
+<p class="muted">El examen real indicado tiene 48 preguntas. Los PDFs compartidos no proporcionan un umbral oficial de aprobación, por eso la plataforma no inventa uno.</p>
+</article>
+<article class="config-card" data-step="03">
+<h3>Enfoque</h3>
+<label class="input-stack">
+<span>Filtro de preguntas</span>
+<select id="quizTopic" name="topic">
+<option value="all">Todos los temas</option>
+<option value="weak">Mis temas más débiles</option>
+<option value="mistakes">Solo errores guardados</option>
+</select>
+</label>
+<label class="switch-row">
+<input id="timerCheck" type="checkbox"/>
+<span><strong>Activar temporizador</strong><small>75 segundos por pregunta como herramienta de práctica; no se presenta como tiempo oficial.</small></span>
+</label>
+</article>
+<aside class="config-summary-box">
+<span class="section-kicker">Resumen</span>
+<h2 id="configTitle">Práctica de 10 preguntas</h2>
+<p id="configText">Todos los temas · explicación inmediata</p>
+<div class="goal-pill" id="configGoal">Práctica corta: 10 preguntas</div>
+<button class="primary-btn wide" type="submit">Comenzar</button>
+</aside>
+</form>
+<section class="exact-quiz-section">
+<div class="exact-quiz-heading">
+<span class="home-badge">EMULADORES DE 48 PREGUNTAS</span>
+<h2>Simulacros completos</h2>
+<p>Cuatro combinaciones construidas a partir de los siete módulos del material de Desarrollo Seguro.</p>
+</div>
+<div class="exact-quiz-grid">
+<article class="exact-quiz-card">
+<span class="exact-quiz-number">01</span><div><small>48 PREGUNTAS · EQUILIBRADO</small><h3>Simulacro General A</h3><p>Todos los bloques.</p></div>
+<button class="home-btn home-btn-primary" data-exact-quiz="simulacro-general-a" type="button">Iniciar</button>
+</article>
+<article class="exact-quiz-card">
+<span class="exact-quiz-number">02</span><div><small>48 PREGUNTAS · EQUILIBRADO</small><h3>Simulacro General B</h3><p>Segunda combinación.</p></div>
+<button class="home-btn home-btn-primary" data-exact-quiz="simulacro-general-b" type="button">Iniciar</button>
+</article>
+<article class="exact-quiz-card">
+<span class="exact-quiz-number">03</span><div><small>48 PREGUNTAS · FOCO APLICACIONES</small><h3>Simulacro Aplicaciones</h3><p>Seguridad web, móvil y APIs.</p></div>
+<button class="home-btn home-btn-primary" data-exact-quiz="simulacro-testing" type="button">Iniciar</button>
+</article>
+<article class="exact-quiz-card">
+<span class="exact-quiz-number">04</span><div><small>48 PREGUNTAS · FOCO INGENIERÍA</small><h3>Simulacro Ingeniería Segura</h3><p>SDLC, código, DevSecOps e IA.</p></div>
+<button class="home-btn home-btn-primary" data-exact-quiz="simulacro-normativa" type="button">Iniciar</button>
+</article>
+</div>
+</section>
+</section>
+<section class="screen" id="screen-exam">
+<div class="exam-shell reveal">
+<header class="exam-head">
+<div>
+<span class="hero-pill soft" id="examModeBadge">Práctica</span>
+<strong id="examProgressText">Pregunta 1 de 48</strong>
+</div>
+<div class="exam-tools">
+<button class="ghost-btn danger-soft" id="leaveExam">Salir</button>
+</div>
+</header>
+<div class="progress-line"><span id="examProgressBar"></span></div>
+<article class="question-card">
+<div class="question-topline">
+<span class="tag-badge" id="questionTopic"></span>
+<span class="muted-strong" id="questionDifficulty"></span>
+<span class="muted-strong" id="questionType"></span>
+</div>
+<h1 id="questionText"></h1>
+<pre class="question-code hidden" id="questionCode"><code></code></pre>
+<form class="answer-grid" id="answerForm"></form>
+<div aria-live="polite" class="timer-box exam-timer-inline hidden" id="examTimer">01:15</div>
+<div class="feedback-box hidden" id="feedbackBox">
+<strong id="feedbackTitle"></strong>
+<p id="feedbackText"></p>
+<small id="feedbackSource"></small>
+</div>
+<div class="question-actions">
+<button class="ghost-btn" id="prevQuestion" type="button">Anterior</button>
+<button class="primary-btn" id="mainQuestionAction" type="button">Comprobar</button>
+</div>
+</article>
+<section class="question-navigator-section">
+<div class="question-navigator-heading">
+<span class="home-badge">ÍNDICE DEL CUESTIONARIO</span>
+<p>Selecciona un número para ir directamente a esa pregunta.</p>
+</div>
+<nav aria-label="Índice de preguntas" class="question-navigator" id="questionNavigator"></nav>
+</section>
+</div>
+</section>
+<section class="screen" id="screen-results">
+<div class="results-stage reveal">
+<section class="results-hero">
+<div class="score-disc">
+<strong id="resultScore">0%</strong>
+<span id="resultStatus">Pendiente</span>
+</div>
+<div class="result-copy">
+<span class="hero-pill soft">RESULTADO</span>
+<h1 id="resultTitle">Resumen del intento</h1>
+<p id="resultSummary"></p>
+<div class="hero-actions">
+<button class="primary-btn" id="retryQuiz">Reintentar</button>
+<button class="ghost-btn" data-route="mistakes">Ver errores</button>
+</div>
+</div>
+</section>
+<section class="results-grid">
+<article class="feature-panel">
+<div class="section-kicker">Desglose</div>
+<h3>Rendimiento por tema</h3>
+<div id="topicBreakdown"></div>
+</article>
+<article class="feature-panel">
+<div class="section-kicker">Siguiente paso</div>
+<h3 id="resultAdviceTitle">Sigue reforzando</h3>
+<p id="resultAdviceText"></p>
+</article>
+</section>
+<section class="review-panel">
+<div class="section-kicker">Revisión pregunta por pregunta</div>
+<div id="answerReview"></div>
+</section>
+</div>
+</section>
+<section class="screen" id="screen-mistakes">
+<section class="inner-hero inner-hero-errors">
+<div class="inner-hero-copy">
+<span class="home-badge">ERRORES · REPASO DIRIGIDO</span>
+<div class="inner-title-wrap">
+<span aria-hidden="true" class="inner-ribbon"></span>
+<h1>Fallar sirve.<br/><strong>Si vuelves al error.</strong></h1>
+</div>
+<p>Las preguntas que fallas quedan guardadas en este navegador para volver a practicarlas de forma dirigida.</p>
+<button class="home-btn home-btn-primary" id="practiceMistakes">Practicar errores</button>
+</div>
+<div aria-hidden="true" class="inner-type-art">
+<span class="inner-ghost-main">ERROR</span>
+<span class="inner-ghost-number">↻</span>
+<span class="inner-ghost-side">REPASO</span>
+<span class="inner-ghost-small">FALLA · ENTIENDE · REPITE</span>
+</div>
+</section>
+<div class="mistakes-layout reveal editorial-mistakes" id="mistakesList"></div>
+</section>
+<section class="screen" id="screen-progress">
+<section class="inner-hero inner-hero-progress">
+<div class="inner-hero-copy">
+<span class="home-badge">PROGRESO · LOCALSTORAGE</span>
+<div class="inner-title-wrap">
+<span aria-hidden="true" class="inner-ribbon"></span>
+<h1>Mide el avance.<br/><strong>No la sensación.</strong></h1>
+</div>
+<p>Consulta promedio, mejor resultado, tarjetas dominadas y rendimiento por tema. Todo queda guardado únicamente en este navegador.</p>
+<button class="home-btn home-btn-secondary danger-soft" id="clearProgress">Borrar progreso</button>
+</div>
+<div aria-hidden="true" class="inner-type-art">
+<span class="inner-ghost-main">DATA</span>
+<span class="inner-ghost-number">48Q</span>
+<span class="inner-ghost-side">PROGRESO</span>
+<span class="inner-ghost-small">INTENTOS · TEMAS · ERRORES</span>
+</div>
+</section>
+<section class="stats-wall reveal editorial-stats">
+<article><small>Intentos</small><strong id="progressAttempts">0</strong></article>
+<article><small>Promedio</small><strong id="progressAverage">0%</strong></article>
+<article><small>Mejor</small><strong id="progressBest">0%</strong></article>
+<article><small>Tarjetas dominadas</small><strong id="progressCards">0</strong></article>
+</section>
+<section class="results-grid reveal">
+<article class="feature-panel">
+<div class="section-kicker">Temas</div>
+<h3>Dominio por tema</h3>
+<div id="progressTopics"></div>
+</article>
+<article class="feature-panel">
+<div class="section-kicker">Historial</div>
+<h3>Últimos intentos</h3>
+<div id="historyList"></div>
+</article>
+</section>
+</section>
+</main>
+<div class="toast" id="toast"></div>
+<script src="data/topics.js"></script>
+<script src="data/questions.js"></script>
+<script src="data/exam-sets.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
